@@ -1,0 +1,8 @@
+__pycache__/
+source/
+tmp/
+client_secrets.json
+credentials.json
+settings.json
+userdata.json
+*.pyc

@@ -1,0 +1,66 @@
+{
+  "start":{
+    "it":"Ciao {} !!! >.<\n\nMi chiamo Daisy e sono un bot creato pricipalmente per organizzare file di stampa 3D.\nSe vuoi sapre altro su di me usa i miei comandi o contatta chi mi ha programmato:\n{}",
+    "en":"Hi {} !!! >.<\n\nI'm Daisy and I'm a bot mainly created to manage files related to 3D printing.\nIf you wanna know more about me please use my commands or contact the one who programmed me:\n{}"
+  },
+  "help":{
+    "it":"Ciao, hai bisogno di aiuto?\nNon preoccupparti, ecco una piccola guida:\n\nDato che alcuni comandi danno accesso ad informazioni private essi sono separati in due categorie:\n___per tutti___\n___per proprietari___\n\n___Comandi per tutti gli utenti___\n/help - ti permette di vedere un elenco dei miei comandi e delle mie funzioni\n/sticker - da ora in poi posso ridimensionare le immagini che mi mandi ad una dimensione accettata da @Stickers\n/endsticker - cancella il comando precedente (se in futuro saranno aggiunte nuove funzioni)\n\nLe immagini da ridimensionare possono essere di qualsiasi tipo e dimensione se compresse, purtroppo Telegram elimina la trasparenza dalle foto compresse\n***SE VUOI MANTENERE UNA FOTO TRASPARENTE INVIAMELA SENZA COMPRESSIONE***\n\n***ATTENZIONE***: @Stickers accetta solo immagini con dimensione inferiore ai 512kB\n\n___Comandi per i possessori di Daisy___\n/getpset - per ottenere il link alla cartella GoogleDrive contenente i profili di stampa\n/getgd - per ottenere il link relativo alla TUA cartella GoogleDrive\n/getgss - per ottenere il link della tabella di stampa\n\nAccetto file GCode da cui vengono estratti i dati per il completamento della tabella di stampa ed STL, caricati nella propria cartella GoogleDrive\n\nIl mio codice sorgente \u00e8 disponibile al link:\n[Daisy-data](https://github.com/teo3300/Daisy-data/)",
+    "en":"Hi, do you need help?\nDon't worry, here's a little handbook:\n\nSome commands give access to private informations so they are divided in two groups:\n___commands for all___\n___commands for owners___\n\n___Commands for all users___\n/help - to view this handbook\n/sticker - from now on all images you send me will be resized to be accepted by @Stickers\n/endsticker - cancel the previous command (it wll be possible to add other features)\n\nResized images can be any size and format if compressed, sadly Telegram removes transparency to compressed photos\n***IF YOU WANNA KEEP TRANSPARENCY SEND ME THE PHOTO WITHOUT COMPRESSION***\n\n***WARNING***: @Stickers still allows immages smaller than 512kB\n\n___Command for owners___\n/getpset - to obtain the link of the GoogleDrive folder containing all the printing profiles\n/getgd - to obtain the link of YOUR GoogleDrive folder\n/getgss - to obtain the link of the printing sheet\n\nFile format accepted: GCode from which print's data are extracted to fill the print sheet and STL, uploaded on on thr personal GoogleDrive folder\n\nMy source code is available at:\n[Daisy-data](https://github.com/teo3300/Daisy-data/)"
+  },
+  "sticker":{
+    "it":"Sei in modalit\u00e0 \"modifica sticker\"",
+    "en":"You are in \"edit sticekrs\" mode"
+  },
+  "endsticker":{
+    "it":"Non sei pi\u00f9 in modalit\u00e0 \"modifica sticker\"",
+    "en":"You are no longer in \"edit sticekrs\" mode"
+  },
+  "getpset":{
+    "it":"Puoi trovare tutti i profili di stampa salvati in questa [cartella di GoogleDrive]({}{})",
+    "en":"You can find all saved printing profiles in this [GoogleDrive Folder]({}{})"
+  },
+  "getgd":{
+    "it":"Va bene {}, ecco la tua [cartella di GoogleDrive]({}{})",
+    "en":"All right {}, here is your [GoogleDrive folder]({}{})"
+  },
+  "getgss":{
+    "it":"Ecco la [Tabella delle stampe]({})",
+    "en":"Here's the [Printing sheet]({})"
+  },
+  "setstatus":{
+    "it":"{} \u00e8 ora un {} ({})",
+    "en":"{}'s status is now {} ({})"
+  },
+  "setstatus_error":{
+    "it":"Errore: utente non trovato",
+    "en":"Error: user not found"
+  },
+  "not_permitted":{
+    "it":"( '- . -)\n\nMi dispiace {}, ma non hai i permessi per utilizzare questo comando\ndigita /help per la lista completa dei comandi",
+    "en":"( '- . -)\n\nI'm sorry {}, but you haven't permissions to use this command\ntype /help for a full list of commands"
+  },
+  "you_are":{
+    "it":"Ho aggiornato il tuo stato: ora hai i permessi da {}",
+    "en":"I updated your status: you now have {}'s permissions"
+  },
+  "status":{
+    "it":["utente pubblico","possessore","amministratore","dio"],
+    "en":["normal user","owner","administrator","god"]
+  },
+  "to_drive":{
+    "it":"Fatto!\nIl file \"{}\" \u00e8 stato caricato nella tua cartella di GoogleDrive",
+    "en":"Done!\n \"{}\" has been loaded to your GoogleDrive folder"
+  },
+  "to_spreadsheets":{
+    "it":"Fatto!\nI dati di stampa relativi al file \"{}\" sono stati inseriti nella tabella di stampa",
+    "en":"Done!\nAll printing data related to \"{}\" have been insert in the printi sheet"
+  },
+  "too_big":{
+    "it":"( '- . -)\n\nMi dispiace, il file che mi hai inviato supera i 20MB, non posso scaricarlo",
+    "en":"( '- . -)\n\nI'm sorry, the file you sent me is bigger than 20MB, I can't download it"
+  },
+  "unknown_flavor":{
+    "it":"( '- . -)\n\nMi dispiace, questo file \u00e8 in una lingua sconosciuta, cercher\u00f2 di studiarla",
+    "en":"( '- . -)\n\nI'm sorry, this file is in an unknown language, I'll try to learn it"
+  }
+}
