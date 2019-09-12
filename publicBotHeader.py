@@ -108,16 +108,16 @@ def resizePhoto(path, photo):
     pass
 
 ################################################################################
-def pngResize(bot, update):
+def pngResize(update, context):
     from initFunctions import getUserData
     message = update.message
     id = message.from_user.id
     chat_id = message.chat.id
     if  chat_id > 0 and getUserData(id, "sticker"):
         document = message.document
-        path = downloadFile(bot, document)
+        path = downloadFile(context.bot, document)
         resized = resizePhoto(path, document.thumb)
-        bot.send_document(chat_id, open(resized,"rb"))
+        context.bot.send_document(chat_id, open(resized,"rb"))
     pass
 
 ################################################################################

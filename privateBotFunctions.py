@@ -1,4 +1,4 @@
-def getpset(bot, update):
+def getpset(update, context):
     from initFunctions import getStatus
     if getStatus(update.message.from_user.id) > 0:
         from publicBotHeader import messageLang
@@ -14,7 +14,7 @@ def getpset(bot, update):
     pass
 
 ################################################################################
-def getgd(bot, update):
+def getgd(update, context):
     from initFunctions import getStatus, getUserData
     if getStatus(update.message.from_user.id) > 0:
         from var import userdata
@@ -33,7 +33,7 @@ def getgd(bot, update):
     pass
 
 ################################################################################
-def getgss(bot, update):
+def getgss(update, context):
     from initFunctions import getStatus
     if getStatus(update.message.from_user.id) > 0:
         from publicBotHeader import messageLang

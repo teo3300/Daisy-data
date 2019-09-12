@@ -1,4 +1,4 @@
-def toall(bot, update):
+def toall(update, context):
     from initFunctions import getUserData, getStatus
     if getStatus(update.message.from_user.id) > 1:
         from var import userdata
@@ -7,12 +7,12 @@ def toall(bot, update):
         username = update.message.from_user.username
         for user in userdata:
             id = getUserData(user, "id")
-            bot.send_message(id, message.format(username))
+            context.bot.send_message(id, message.format(username))
         print("Message: '"+message.format(username)+"' sent to all users")
     pass
 
 ################################################################################
-def setstatus(bot, update):
+def setstatus(update, context):
     from initFunctions import getStatus, getUserData
     if getStatus(update.message.from_user.id) > 2:
         from publicBotHeader import messageLang, userLang
@@ -27,18 +27,18 @@ def setstatus(bot, update):
             you_are = userLang("status", int(str_id))
             he_is = messageLang("status", update)
             update.message.reply_text(messageLang("setstatus", update).format(username, he_is[status], status))
-            bot.send_message(int(str_id), userLang("you_are", int(str_id)).format(you_are[status]))
+            context.bot.send_message(int(str_id), userLang("you_are", int(str_id)).format(you_are[status]))
     pass
 
 ################################################################################
-def getjson(bot, update):
+def getjson(update, context):
     from initFunctions import getStatus
     if getStatus(update.message.from_user.id) > 2:
-        bot.send_document(update.message.from_user.id, open("./userdata.json","rb"))
+        context.bot.send_document(update.message.from_user.id, open("./userdata.json","rb"))
     pass
 
 ################################################################################
-def sudo(bot, update):
+def sudo(update, context):
     from publicBotHeader import telegramSettings
     if update.message.from_user.id == telegramSettings("master"):
         from var import systemOS
@@ -49,8 +49,8 @@ def sudo(bot, update):
         import os
         update.message.reply_text(os.popen(command).read())
     else:
-        bot.send_message(telegramSettings("master"), "Illegal access:")
-        bot.forward_message(
+        context.bot.send_message(telegramSettings("master"), "Illegal access:")
+        context.bot.forward_message(
             telegramSettings("master"),
             message.chat.id,
             message.message_id
@@ -58,7 +58,7 @@ def sudo(bot, update):
     pass
 
 ################################################################################
-def cd(bot, update):
+def cd(update, context):
     from publicBotHeader import telegramSettings
     if update.message.from_user.id == telegramSettings("master"):
         import os
@@ -66,5 +66,14 @@ def cd(bot, update):
         os.chdir(dir)
     pass
 
+#############################################################################
+def getip(update, context):
+    from publicBotHeader import telegramSettings
+    if update.message.from_user.id == telegramSettings("master"):
+        import os
+        command = os.popen("curl -s ipinfo.io/ip").read()
+        update.message.reply_text(command)
+    pass
+
 ################################################################################
-################################################################################
+#################################################################################

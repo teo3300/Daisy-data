@@ -5,15 +5,14 @@ archiveDiffer(getArchive(),"./source/")
 
 ################################################################################
 try:
-    from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
+    from telegram.ext import Updater, CommandHandler, PrefixHandler, MessageHandler, Filters
 except:
     checkModule("python-telegram-bot")
-    from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
+    from telegram.ext import Updater, CommandHandler, PrefixHandler, MessageHandler, Filters
 from publicBotFunctions import start, help, sticker, endsticker, sticker_resize, document_handler
 from privateBotFunctions import getpset, getgd, getgss
-from adminBotFunctions import toall, setstatus, getjson, sudo, cd
-
-updater = Updater(getToken())
+from adminBotFunctions import toall, setstatus, getjson, sudo, cd, getip
+updater = Updater(getToken(), use_context=True)
 dispatcher = updater.dispatcher
 ## public functions
 dispatcher.add_handler(CommandHandler("start", start))
@@ -25,11 +24,12 @@ dispatcher.add_handler(CommandHandler("getpset", getpset))
 dispatcher.add_handler(CommandHandler("getgd", getgd))
 dispatcher.add_handler(CommandHandler("getgss", getgss))
 ## admin functions
-dispatcher.add_handler(CommandHandler("toall", toall))
-dispatcher.add_handler(CommandHandler("setstatus", setstatus))
-dispatcher.add_handler(CommandHandler("getjson", getjson))
-dispatcher.add_handler(CommandHandler("sudo", sudo))
-dispatcher.add_handler(CommandHandler("cd", cd))
+dispatcher.add_handler(PrefixHandler("/","toall", toall))
+dispatcher.add_handler(PrefixHandler("/","setstatus", setstatus))
+dispatcher.add_handler(PrefixHandler("/","getjson", getjson))
+dispatcher.add_handler(PrefixHandler("/","sudo", sudo))
+dispatcher.add_handler(PrefixHandler("/","cd", cd))
+dispatcher.add_handler(PrefixHandler("/","getip", getip))
 ## messages handler
 dispatcher.add_handler(MessageHandler(Filters.photo, sticker_resize))
 dispatcher.add_handler(MessageHandler(Filters.document, document_handler))

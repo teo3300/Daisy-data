@@ -23,10 +23,14 @@ def sheetOpen():
     except:
         checkModule("oauth2client")
         from oauth2client.service_account import ServiceAccountCredentials
+    print("Creating GSS credentials, this can take a while...")
     from privateBotHeader import getDriveInfo
     creds = ServiceAccountCredentials.from_json_keyfile_name(getDriveInfo("credentials"),getDriveInfo("scope"))
     client = gspread.authorize(creds)
-    return client.open(getDriveInfo("sheet")).sheet1
+    print("1/2 DONE")
+    sheet = client.open(getDriveInfo("sheet")).sheet1
+    print("2/2 DONE")
+    return sheet
     pass
 
 ################################################################################
@@ -45,7 +49,12 @@ def fileToDrive(path, folder_id):
     }
     to_upload = drive.CreateFile(metadata)
     to_upload.SetContentFile(folder+file_name)
-    to_upload.Upload()
+    try:
+        to_upload.Upload()
+    except:
+        return False
+    else:
+        return True
     pass
 
 ################################################################################
