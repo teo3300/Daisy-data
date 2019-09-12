@@ -1,7 +1,7 @@
 {
   "start":{
-    "it":"Ciao {} !!! >.<\n\nMi chiamo Daisy e sono un bot creato pricipalmente per organizzare file di stampa 3D.\nSe vuoi sapre altro su di me usa i miei comandi o contatta chi mi ha programmato:\n{}",
-    "en":"Hi {} !!! >.<\n\nI'm Daisy and I'm a bot mainly created to manage files related to 3D printing.\nIf you wanna know more about me please use my commands or contact the one who programmed me:\n{}"
+    "it":"Ciao {} !!! >.<\n\nMi chiamo Daisy e sono un bot creato pricipalmente per organizzare file di stampa 3D.\nSe vuoi sapre altro su di me usa il comando /help o scambia due parole con\n{}",
+    "en":"Hi {} !!! >.<\n\nI'm Daisy and I'm a bot mainly created to manage files related to 3D printing.\nIf you wanna know more about me please use the command /help or chat with\n{}"
   },
   "help":{
     "it":"Ciao, hai bisogno di aiuto?\nNon preoccupparti, ecco una piccola guida:\n\nDato che alcuni comandi danno accesso ad informazioni private essi sono separati in due categorie:\n___per tutti___\n___per proprietari___\n\n___Comandi per tutti gli utenti___\n/help - ti permette di vedere un elenco dei miei comandi e delle mie funzioni\n/sticker - da ora in poi posso ridimensionare le immagini che mi mandi ad una dimensione accettata da @Stickers\n/endsticker - cancella il comando precedente (se in futuro saranno aggiunte nuove funzioni)\n\nLe immagini da ridimensionare possono essere di qualsiasi tipo e dimensione se compresse, purtroppo Telegram elimina la trasparenza dalle foto compresse\n***SE VUOI MANTENERE UNA FOTO TRASPARENTE INVIAMELA SENZA COMPRESSIONE***\n\n***ATTENZIONE***: @Stickers accetta solo immagini con dimensione inferiore ai 512kB\n\n___Comandi per i possessori di Daisy___\n/getpset - per ottenere il link alla cartella GoogleDrive contenente i profili di stampa\n/getgd - per ottenere il link relativo alla TUA cartella GoogleDrive\n/getgss - per ottenere il link della tabella di stampa\n\nAccetto file GCode da cui vengono estratti i dati per il completamento della tabella di stampa ed STL, caricati nella propria cartella GoogleDrive\n\nIl mio codice sorgente \u00e8 disponibile al link:\n[Daisy-data](https://github.com/teo3300/Daisy-data/)",
@@ -62,5 +62,17 @@
   "unknown_flavor":{
     "it":"( '- . -)\n\nMi dispiace, questo file \u00e8 in una lingua sconosciuta, cercher\u00f2 di studiarla",
     "en":"( '- . -)\n\nI'm sorry, this file is in an unknown language, I'll try to learn it"
+  },
+  "stl_failed":{
+    "it":"(O o O)\n\nIl file \u00e8 esploso mentre cercavo di caricarlo su GoogleDrive",
+    "en":"(O o O)\n\nYour file exploded while I was trying to upload it"
+  },
+  "profile_loaded":{
+    "it":"Il profilo Cura \u00e8 stato caricato correttamente",
+    "en":"The file has been correctly uploaded"
+  },
+  "profile_failed":{
+    "it":"C'\u00e8 stato un errore mentre cercavo di caricare il file su GoogleDrive",
+    "en":"An error has occurred while trying to upload the file"
   }
 }
