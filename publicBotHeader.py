@@ -103,7 +103,7 @@ def resizePhoto(path, photo):
     img = Image.open(path)
     img = img.resize((int(w), int(h)), PIL.Image.ANTIALIAS)
     new_image = folder+"resized.png"
-    img.save(new_image)
+    img.save(new_image, quality=88)
     return new_image
     pass
 
