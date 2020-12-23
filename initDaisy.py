@@ -11,7 +11,7 @@ except:
     from telegram.ext import Updater, CommandHandler, PrefixHandler, MessageHandler, Filters
 from publicBotFunctions import start, help, sticker, endsticker, sticker_resize, document_handler
 from privateBotFunctions import getpset, getgd, getgss
-from adminBotFunctions import toall, setstatus, getjson, sudo, cd, getip
+from adminBotFunctions import adminhelp, toall, setstatus, setgroup, getjson, sudo, cd, getip
 updater = Updater(getToken(), use_context=True)
 dispatcher = updater.dispatcher
 ## public functions
@@ -30,6 +30,8 @@ dispatcher.add_handler(PrefixHandler("/","getjson", getjson))
 dispatcher.add_handler(PrefixHandler("/","sudo", sudo))
 dispatcher.add_handler(PrefixHandler("/","cd", cd))
 dispatcher.add_handler(PrefixHandler("/","getip", getip))
+dispatcher.add_handler(PrefixHandler("/","setgroup", setgroup))
+dispatcher.add_handler(PrefixHandler("/","adminhelp", adminhelp))
 ## messages handler
 dispatcher.add_handler(MessageHandler(Filters.photo, sticker_resize))
 dispatcher.add_handler(MessageHandler(Filters.document, document_handler))

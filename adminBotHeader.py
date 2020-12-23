@@ -14,3 +14,12 @@ def setStatus(str_id, status):
     updateJson(userdata, "userdata.json")
     print(str_id+"'s status is set to", status)
     pass
+
+################################################################################
+def setGroup(str_id, group):
+    from var import userdata
+    from initFunctions import updateJson
+    userdata[str_id]["group"] = group
+    updateJson(userdata, "userdata.json")
+    print(str_id+"' group set to", group)
+    pass

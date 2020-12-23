@@ -1,3 +1,21 @@
+def adminhelp(update, context):
+    from initFunctions import getStatus
+    if getStatus(update.message.from_user.id) > 2:
+        message = """
+adminhelp
+toall
+setstatus
+getjson
+sudo
+cd
+getip
+setgroup
+"""
+        update.message.reply_text(message)
+    pass
+
+
+################################################################################
 def toall(update, context):
     from initFunctions import getUserData, getStatus
     if getStatus(update.message.from_user.id) > 1:
@@ -38,6 +56,29 @@ def getjson(update, context):
     pass
 
 ################################################################################
+def setgroup(update, context):
+    from initFunctions import getStatus, getUserData
+    if getStatus(update.message.from_user.id) > 2:
+        from publicBotHeader import messageLang, userLang
+        from adminBotHeader import idIs, setGroup
+        split_message = update.message.text.split(" ")
+        group = split_message[1]
+        username = split_message[2][1:]
+        str_id = idIs(username)
+        if str_id == "error":
+            update.message.reply_text(messageLang("setstatus_error", update).format(username))
+        else:
+            setGroup(str_id, group)
+            update.message.reply_text(messageLang("setgroup", update).format(username, group))
+            if(group != ""):
+                print("Group: user '"+username+"', added to: '"+group+"'")
+                context.bot.send_message(int(str_id), userLang("your_group", int(str_id)).format(group))
+            else:
+                print("Group: user '"+username+"', removed from '"+group+"'")
+                context.bot.send_message(int(str_id), userLang("removed_group", int(str_id)))
+    pass
+
+################################################################################
 def sudo(update, context):
     from publicBotHeader import telegramSettings
     if update.message.from_user.id == telegramSettings("master"):
@@ -52,8 +93,8 @@ def sudo(update, context):
         context.bot.send_message(telegramSettings("master"), "Illegal access:")
         context.bot.forward_message(
             telegramSettings("master"),
-            message.chat.id,
-            message.message_id
+            update.message.chat.id,
+            update.message.message_id
         )
     pass
 
@@ -66,7 +107,7 @@ def cd(update, context):
         os.chdir(dir)
     pass
 
-#############################################################################
+################################################################################
 def getip(update, context):
     from publicBotHeader import telegramSettings
     if update.message.from_user.id == telegramSettings("master"):
@@ -76,4 +117,4 @@ def getip(update, context):
     pass
 
 ################################################################################
-#################################################################################
+################################################################################

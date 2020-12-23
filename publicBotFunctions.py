@@ -6,13 +6,14 @@ def start(update, context):
     username = user.username
     language_code = user.language_code
     from publicBotHeader import addUser, messageLang, telegramSettings
-    if not addUser(id, first_name, last_name, username, language_code):
-        message = update.message
-        context.bot.forward_message(
-            telegramSettings("master"),
-            message.chat.id,
-            message.message_id
-        )
+    # if not
+    addUser(id, first_name, last_name, username, language_code)
+    #    message = update.message
+    #    context.bot.forward_message(
+    #        telegramSettings("master"),
+    #        message.chat.id,
+    #        message.message_id
+    #    )
     update.message.reply_text(
         messageLang("start", update).format(
             first_name,

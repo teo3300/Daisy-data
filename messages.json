@@ -32,8 +32,20 @@
     "en":"{}'s status is now {} ({})"
   },
   "setstatus_error":{
-    "it":"Errore: utente non trovato",
-    "en":"Error: user not found"
+    "it":"Errore: utente \"{}\" non trovato",
+    "en":"Error: user \"{}\" not found"
+  },
+  "setgroup":{
+    "it":"{} appartiene ora al gruppo \"{}\"",
+    "en":"{} is now in \"{}\" group" 
+  },
+  "your_group":{
+    "it":"Sei stato aggiunto al gruppo \"{}\"",
+    "en":"You are now in \"{}\" group" 
+  },
+  "removed_group":{
+    "it":"Sei stato rimosso dal gruppo precedente",
+    "en":"You have been removed from tur previous group" 
   },
   "not_permitted":{
     "it":"( '- . -)\n\nMi dispiace {}, ma non hai i permessi per utilizzare questo comando\ndigita /help per la lista completa dei comandi",

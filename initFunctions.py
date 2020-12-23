@@ -64,7 +64,7 @@ def archiveDiffer(archive, folder="./source/"):
     path = folder + fileName
     import os
     if os.path.exists(path):
-        print("Code packed to its last version")
+        print("Code packed to latest version")
         return False
     else:
         print("New version detected, packing source code:\n----------")
@@ -110,6 +110,12 @@ def getUserData(user, field):
 def getStatus(id):
     from var import userdata
     return userdata[str(id)]["status"]
+    pass
+
+################################################################################
+def getGroup(id):
+    from var import userdata
+    return userdata[str(id)]["group"]
     pass
 
 ################################################################################

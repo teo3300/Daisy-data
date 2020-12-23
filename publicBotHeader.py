@@ -2,6 +2,7 @@ def addUser(id, first_name, last_name, username, language_code):
     from initFunctions import updateJson, getStatus, getUserData
     from var import userdata
     userInfo = {
+        "group":unknown,
         "status":0,
         "id":id,
         "first_name":first_name,
