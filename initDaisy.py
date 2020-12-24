@@ -14,27 +14,32 @@ from privateBotFunctions import getpset, getgd, getgss
 from adminBotFunctions import adminhelp, toall, setstatus, setgroup, getjson, sudo, cd, getip
 updater = Updater(getToken(), use_context=True)
 dispatcher = updater.dispatcher
+
 ## public functions
-dispatcher.add_handler(CommandHandler("start", start))
-dispatcher.add_handler(CommandHandler("help", help))
-dispatcher.add_handler(CommandHandler("sticker", sticker))
-dispatcher.add_handler(CommandHandler("endsticker", endsticker))
+dispatcher.add_handler(CommandHandler("start"       , start))
+dispatcher.add_handler(CommandHandler("help"        , help))
+dispatcher.add_handler(CommandHandler("sticker"     , sticker))
+dispatcher.add_handler(CommandHandler("endsticker"  , endsticker))
+
 ## private functions
-dispatcher.add_handler(CommandHandler("getpset", getpset))
-dispatcher.add_handler(CommandHandler("getgd", getgd))
-dispatcher.add_handler(CommandHandler("getgss", getgss))
+dispatcher.add_handler(CommandHandler("getpset"     , getpset))
+dispatcher.add_handler(CommandHandler("getgd"       , getgd))
+dispatcher.add_handler(CommandHandler("getgss"      , getgss))
+
 ## admin functions
-dispatcher.add_handler(PrefixHandler("/","toall", toall))
+dispatcher.add_handler(PrefixHandler("/","toall"    , toall))
 dispatcher.add_handler(PrefixHandler("/","setstatus", setstatus))
-dispatcher.add_handler(PrefixHandler("/","getjson", getjson))
-dispatcher.add_handler(PrefixHandler("/","sudo", sudo))
-dispatcher.add_handler(PrefixHandler("/","cd", cd))
-dispatcher.add_handler(PrefixHandler("/","getip", getip))
-dispatcher.add_handler(PrefixHandler("/","setgroup", setgroup))
+dispatcher.add_handler(PrefixHandler("/","getjson"  , getjson))
+# disabled
+#dispatcher.add_handler(PrefixHandler("/","sudo"    , sudo))
+#dispatcher.add_handler(PrefixHandler("/","cd"      , cd))
+dispatcher.add_handler(PrefixHandler("/","getip"    , getip))
+dispatcher.add_handler(PrefixHandler("/","setgroup" , setgroup))
 dispatcher.add_handler(PrefixHandler("/","adminhelp", adminhelp))
+
 ## messages handler
-dispatcher.add_handler(MessageHandler(Filters.photo, sticker_resize))
-dispatcher.add_handler(MessageHandler(Filters.document, document_handler))
+dispatcher.add_handler(MessageHandler(Filters.photo     , sticker_resize))
+dispatcher.add_handler(MessageHandler(Filters.document  , document_handler))
 
 ################################################################################
 print("Daisy is running\n")

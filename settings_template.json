@@ -1,0 +1,26 @@
+{
+  "bot_token":"<somecode>",
+  "telegram":{
+    "master":,
+    "manager":,
+    "master_username":"@myUserName",
+    "bot_username":"@botUserName"
+  },
+  "drive":{
+    "url":"https://drive.google.com/drive/folders/",
+    "sheets_url":"https://docs.google.com/spreadsheets/d/<somecode>/",
+    "profiles":"<somecode>" ,
+    "source":"<somecode>",
+    "credentials":"credentials.json",
+    "scope":["https://www.googleapis.com/auth/drive"],
+    "sheet":"<gss page name>"
+  },
+  "archive":{
+    "name":"daisy-source_",
+    "major":"0",
+    "minor":"2",
+    "debug":"1",
+    "ext":"tgz",
+    "repo":"https://github.com/teo3300/Daisy-data/"
+  }
+}

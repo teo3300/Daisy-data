@@ -35,6 +35,10 @@
     "it":"Errore: utente \"{}\" non trovato",
     "en":"Error: user \"{}\" not found"
   },
+  "toall_error":{
+    "it":"Errore: il messaggio inviato è vuoto",
+    "en":"Error: empty message"
+  },
   "setgroup":{
     "it":"{} appartiene ora al gruppo \"{}\"",
     "en":"{} is now in \"{}\" group" 

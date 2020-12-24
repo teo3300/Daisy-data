@@ -4,7 +4,6 @@ def idIs(username):
         if userdata[user]["username"] == username:
             return user
     return "error"
-    pass
 
 ################################################################################
 def setStatus(str_id, status):

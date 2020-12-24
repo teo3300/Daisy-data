@@ -3,7 +3,6 @@ def getSystem():
     system = platform.system().lower()
     print("System found: '"+system+"'")
     return system
-    pass
 
 ################################################################################
 def tmpFolder(system):
@@ -98,25 +97,21 @@ def checkModule(moduleName):
 def getToken():
     from var import settings
     return settings["bot_token"]
-    pass
 
 ################################################################################
 def getUserData(user, field):
     from var import userdata
     return userdata[str(user)][field]
-    pass
 
 ################################################################################
 def getStatus(id):
     from var import userdata
     return userdata[str(id)]["status"]
-    pass
 
 ################################################################################
 def getGroup(id):
     from var import userdata
     return userdata[str(id)]["group"]
-    pass
 
 ################################################################################
 ################################################################################
