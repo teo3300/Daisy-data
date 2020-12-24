@@ -2,7 +2,7 @@ def addUser(id, first_name, last_name, username, language_code):
     from initFunctions import updateJson, getStatus, getUserData
     from var import userdata
     userInfo = {
-        "group":unknown,
+        "group":"unknown",
         "status":0,
         "id":id,
         "first_name":first_name,
@@ -23,7 +23,6 @@ def addUser(id, first_name, last_name, username, language_code):
     userdata[str(id)] = userInfo
     updateJson(userdata, "userdata.json")
     return was_known
-    pass
 
 ################################################################################
 def messageLang(message_key, update):
@@ -56,19 +55,16 @@ def userLang(message_key, user):
 def telegramSettings(key="bot_username"):
     from var import settings
     return settings["telegram"][key]
-    pass
 
 ################################################################################
 def getSticker(update):
     from var import userdata
     return userdata[update]["sticker"]
-    pass
 
 ################################################################################
 def setSticker(id, value):
     from var import userdata
     userdata[id]["sticker"] = value
-    pass
 
 ################################################################################
 def downloadFile(bot, file, file_name = "tmp.png"):
@@ -79,7 +75,6 @@ def downloadFile(bot, file, file_name = "tmp.png"):
     file_id = file.file_id
     bot.get_file(file_id).download(target)
     return folder, file_name
-    pass
 
 ################################################################################
 def resizePhoto(path, photo):
@@ -106,7 +101,6 @@ def resizePhoto(path, photo):
     new_image = folder+"resized.png"
     img.save(new_image, quality=85)
     return new_image
-    pass
 
 ################################################################################
 def pngResize(update, context):

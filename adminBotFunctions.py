@@ -3,7 +3,7 @@ def adminhelp(update, context):
     if getStatus(update.message.from_user.id) > 2:
         message = """
 adminhelp - get advanced help
-toal - message all with signature
+toall - message all with signature
 setstatus - set user status (0-1-2-3) (/setgroup N userName)
 getjson - get local db
 [DISABLED] sudo - execute command
